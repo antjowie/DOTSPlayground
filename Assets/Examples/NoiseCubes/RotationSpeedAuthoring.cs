@@ -4,6 +4,8 @@ using UnityEngine;
 using Unity.Entities;
 using Unity.Mathematics;
 
+// Class makes sure to convert gameobjects to entities, we use this class
+// so that we can define our rotation in degrees, and then convert it to radians 
 public class RotationSpeedAuthoring : MonoBehaviour, IConvertGameObjectToEntity
 {
     public float DegreesPerSecond = 360f;
