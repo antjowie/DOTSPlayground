@@ -7,6 +7,5 @@ using Unity.Entities;
 public struct Spawner : IComponentData
 {
     public Entity entity;
-    public int countX;
-    public int countZ;
+    public int sideCount;
 }

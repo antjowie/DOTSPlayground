@@ -8,8 +8,7 @@ using Unity.Entities;
 public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDeclareReferencedPrefabs
 {
     public GameObject Prefab;
-    public int CountX = 100;
-    public int CountZ = 100;
+    public int SideCount = 100;
 
     public void DeclareReferencedPrefabs(List<GameObject> referencedPrefabs)
     {
@@ -21,8 +20,7 @@ public class SpawnerAuthoring : MonoBehaviour, IConvertGameObjectToEntity, IDecl
         dstManager.AddComponentData(entity, new Spawner
         {
             entity = conversionSystem.GetPrimaryEntity(Prefab),
-            countX = CountX,
-            countZ = CountZ,
+            sideCount = SideCount,
         });
     }
 }
