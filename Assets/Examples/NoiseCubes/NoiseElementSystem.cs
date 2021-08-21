@@ -30,13 +30,13 @@ public class NoiseElementSystem : SystemBase
             // Translate
             // We simply make the squared distance always be 1, since we rotate the whole plane
             // we can write the coordinate the same always
+            // It wasn't that simple unfortunately. I think, the whole approach at the moment
+            // is flawed (and unrealistic, you'd normally generate a mesh)
+            // It was a nice attempt though and the result is pretty cool (even though it throws thousands of 
+            // exceptions every frame)
             // Note: if index is bounds is 100 and we subtract 50, we go from -50 to 49
             // which I think is incorrect. Problem for later
             var pos = noiseElement.index - noiseElement.bounds / 2;
-
-            // We know that 0,0 has a distance of 1 from the center
-            // Taking the square root from every element seems very very slow
-            // Since we do not normalize, we should aim for a hypotenuse of bounds/2
             var hypotenuse = math.sqrt(pos.x * pos.x + pos.y * pos.y);
             var ratio = hypotenuse / (noiseElement.bounds * 0.5f);
 
@@ -45,7 +45,7 @@ public class NoiseElementSystem : SystemBase
                     pos.x,
                     pos.y,
                     //(noiseElement.bounds * 0.5f + height) * ratio
-                    (noiseElement.bounds * 0.5f * ratio + height) 
+                    (noiseElement.bounds * 0.5f + height) / ratio
 
                     ) * 1.5f));
 
