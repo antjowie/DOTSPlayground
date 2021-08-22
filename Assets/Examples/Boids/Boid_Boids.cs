@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Unity.Entities;
 using Unity.Mathematics;
 
+// Should be called Velocity instead of Boid
 [GenerateAuthoringComponent]
 public struct Boid_Boids : IComponentData
 {
@@ -13,10 +14,6 @@ public struct Boid_Boids : IComponentData
     //public float seperation; // Factor to avoid running into others
     //public float alignment; // Factor to match surrounding speed and direction
     //public float speed;
-    //public float3 coherenceVec;
-    //public float3 seperationVec;
-    //public float3 alignmentVec;
-    //public float3 toBoundsVec;
 
     public float3 velocity;
 }

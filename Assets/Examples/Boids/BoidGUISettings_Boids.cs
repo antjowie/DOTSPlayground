@@ -5,9 +5,9 @@ using UnityEngine;
 public class BoidGUISettings_Boids : MonoBehaviour
 {
     static public float speed = 50f; // Factor to head towards the group centre
-    static public float coherence = 0.1f; // Factor to head towards the group centre
-    static public float seperation = 0.5f; // Factor to avoid running into others
-    static public float alignment = 0.2f; // Factor to match surrounding speed and direction
+    static public float coherence = 0.01f; // Factor to head towards the group centre
+    static public float seperation = 0.01f; // Factor to avoid running into others
+    static public float alignment = 0.005f; // Factor to match surrounding speed and direction
 
     static public float boxSize = 100f; // Factor to match surrounding speed and direction
 
@@ -24,11 +24,11 @@ public class BoidGUISettings_Boids : MonoBehaviour
         GUILayout.Label($"Speed {speed}");
         speed = GUILayout.HorizontalSlider(speed, 0.0f, 500.0f);
         GUILayout.Label($"Coherence {coherence}");
-        coherence = GUILayout.HorizontalSlider(coherence, 0.0f, 1.0f);
+        coherence = GUILayout.HorizontalSlider(coherence, 0.0f, 0.1f);
         GUILayout.Label($"Seperation {seperation}");
-        seperation = GUILayout.HorizontalSlider(seperation, 0.0f, 1.0f);
+        seperation = GUILayout.HorizontalSlider(seperation, 0.0f, 0.1f);
         GUILayout.Label($"Alignment {alignment}");
-        alignment = GUILayout.HorizontalSlider(alignment, 0.0f, 1.0f);
+        alignment = GUILayout.HorizontalSlider(alignment, 0.0f, 0.1f);
 
         GUILayout.Label($"BoxSize  {boxSize}");
         boxSize = GUILayout.HorizontalSlider(boxSize, 0.0f, 200.0f);
